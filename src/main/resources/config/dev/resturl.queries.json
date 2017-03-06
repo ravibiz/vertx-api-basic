@@ -1,0 +1,21 @@
+{
+	"queries": 
+	[
+	  	{
+			"id": "select.test1",
+			"roles": [],
+			"type": "select",
+			"table": "tesst",
+			"query": "select * from test",
+			"params": []
+		},
+		{
+			"id": "insert.test1",
+			"roles": [],
+			"type": "insert",
+			"table": "test",
+			"query": "insert into test(name, age) values(?, ?)",
+			"params": ["name", "age"]
+		}
+	]
+}

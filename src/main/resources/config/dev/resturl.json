@@ -1,0 +1,21 @@
+{
+	"resturls": 
+	[
+		{
+			"uri": "/api/testdb",
+			"source": "db",
+			"query": "select.test2",
+			"params": [],
+			"resultfields": [],
+			"default": "{\"values\":[]}",
+			"resultkey": "test2"
+		},
+		{
+			"uri": "/api/testfile",
+			"source": "file",
+			"file": "test.json",
+			"encoding" : "application/json",
+			"default": "{\"values\":[]}"
+		}
+	]
+}

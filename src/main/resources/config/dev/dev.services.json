@@ -1,0 +1,28 @@
+{
+  "services": 
+  {
+    "sequential": 
+    [
+      {
+        "name": "com.vk.vertxapi.db.DatabaseVerticle",
+        "instances": 10
+      },
+      {
+        "name": "com.vk.vertxapi.db.QueryPrepareService",
+        "instances": 3
+      }
+    ],
+    "parallel": 
+    [
+      {
+        "name": "com.vk.vertxapi.api.ApiServerVerticle",
+        "instances": 50,
+        "worker": false
+      },
+      {
+        "name": "com.vk.vertxapi.message.MessageVerticle",
+        "instances": 1
+      }
+    ]
+  }
+}

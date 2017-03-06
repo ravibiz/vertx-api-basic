@@ -1,0 +1,20 @@
+{
+  "queries": 
+  [
+    {
+      "id": "select.messages",
+      "type": "select",
+      "table": "messages",
+      "query": "select * from messages",
+      "params": []
+    },
+  	{
+		"id": "select.test2",
+		"roles": [],
+		"type": "select",
+		"table": "tesst",
+		"query": "select * from test",
+		"params": []
+	}
+  ]
+}

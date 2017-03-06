@@ -1,0 +1,41 @@
+{
+  "version": "0.0.0a",
+
+   "jdbc": {
+    "driver_class": "com.mysql.jdbc.Driver",
+    "url": "jdbc:mysql://localhost/appdb?autoReconnect=true&useSSL=false",
+    "max_pool_size": 20,
+    "user": "root",
+    "password": "root",
+    "max_idle_time" :  28799
+  },
+
+  "resetpassword":{
+  	 "expInMin" : 30,
+  	 "resetBaseUrl" : "http://localhost:3000/#/resetpassword?token="
+  },
+
+  "firebase": {
+    "fb_secret" : "oh9mUKP4lwQ9gZtRZE4R7iTGGKueakyRMzopmlcN"
+  },
+ 
+  "ssl_keystore": "ssl/apiserver.jks",
+  "ssl_password": "Apiserver123#",
+
+  "secure_api" : false,
+  
+  "allowcrossorigin" : true,
+    
+  "usessl" : false,
+  
+  "apicache" : true,
+
+  "robots.txt": "",
+  
+  "sendgridkey" : "SG.YbClTghsRTuan6jrIM5R6g.9NX0IHaaV7teje1IRRdehacSpfZwjeCnu2c1q08UO", 
+  "sendemailfromusername" : "Vertx API", 
+  "sendemailfrom" : "vertxapi@vertxapi.com",
+  
+  "queryfiles": ["config/dev/dev.queries.json", "config/dev/resturl.queries.json"]
+  
+}

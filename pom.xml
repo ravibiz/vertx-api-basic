@@ -34,7 +34,7 @@
 	<dependency>
 		<groupId>io.vertx</groupId>
 		<artifactId>vertx-sql-common</artifactId>
-		<version>3.3.3</version>
+		<version>3.5.1</version>
 	</dependency>
 
 	<dependency>
@@ -114,18 +114,55 @@
 	<!--  Auth and password End -->
 
 	<!-- Database connector -->  	
-  	<dependency>
-		<groupId>postgresql</groupId>
-		<artifactId>postgresql</artifactId>
-		<version>9.1-901-1.jdbc4</version>
+	<dependency>
+	    <groupId>postgresql</groupId>
+	    <artifactId>postgresql</artifactId>
+	    <version>9.1-901-1.jdbc4</version>
 	</dependency>
+
   	
   	<dependency>
 		<groupId>mysql</groupId>
 		<artifactId>mysql-connector-java</artifactId>
 		<version>6.0.2</version>
 	</dependency>
-	<!-- Database connector End -->
+	
+	
+	<dependency>
+	  <groupId>io.vertx</groupId>
+	  <artifactId>vertx-mysql-postgresql-client</artifactId>
+	  <version>3.5.1</version>
+	</dependency>
+
+	<!-- https://mvnrepository.com/artifact/org.scala-lang/scala-library -->
+	<dependency>
+	    <groupId>org.scala-lang</groupId>
+	    <artifactId>scala-library</artifactId>
+	    <version>2.12.4</version>
+	</dependency>
+	
+	
+	<!-- https://mvnrepository.com/artifact/com.github.mauricio/postgresql-async -->
+	<dependency>
+	    <groupId>com.github.mauricio</groupId>
+	    <artifactId>postgresql-async_2.11</artifactId>
+	    <version>0.2.15</version>
+	    <scope>provided</scope>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
+	<dependency>
+	    <groupId>joda-time</groupId>
+	    <artifactId>joda-time</artifactId>
+	    <version>2.9.9</version>
+	</dependency>
+	
+	
+	
+	
+
+	
+ 	<!-- Database connector End -->
 	
   	<dependency>
 		<groupId>org.apache.velocity</groupId>
@@ -206,13 +243,14 @@
 	</dependency>
 	<!-- Email End-->	
 
-	<!-- Scheduler -->	
-	<dependency>
-	    <groupId>org.quartz-scheduler</groupId>
-	    <artifactId>quartz</artifactId>
-	    <version>2.2.3</version>
-	</dependency>
-	<!-- Scheduler End -->
+
+	<!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
+<dependency>
+    <groupId>com.mchange</groupId>
+    <artifactId>c3p0</artifactId>
+    <version>0.9.5.2</version>
+</dependency>
+	
 	
   </dependencies>
   
@@ -243,7 +281,7 @@
 	            implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 	            <manifestEntries>
 	              <Main-Class>io.vertx.core.Starter</Main-Class>
-	              <Main-Verticle>com.jigsaw.clms.ServerVerticle</Main-Verticle>
+	              <Main-Verticle>com.vk.vertxapi.api.ServerVerticle</Main-Verticle>
 	            </manifestEntries>
 	          </transformer>
 	          <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>

@@ -12,15 +12,16 @@ import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.EventBus;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonObject;
-import io.vertx.ext.jdbc.JDBCClient;
+import io.vertx.ext.asyncsql.AsyncSQLClient;
+import io.vertx.ext.asyncsql.PostgreSQLClient;
 import io.vertx.ext.sql.SQLConnection;
 
 
-public class DatabaseVerticle extends AbstractVerticle
+public class PgDatabaseVerticle extends AbstractVerticle
 {
-	private final static Logger LOG = LogManager.getLogger(DatabaseVerticle.class);
+	private final static Logger LOG = LogManager.getLogger(PgDatabaseVerticle.class);
 	public static final String DB_QUERY = "db.query";
-	private JDBCClient client; 
+	private AsyncSQLClient client; 
 	
 	@Override
 	public void start(Future<Void> startFuture) throws Exception
@@ -38,12 +39,12 @@ public class DatabaseVerticle extends AbstractVerticle
 
 	private void initClient(Future<Void> startFuture) throws Exception
 	{
-		JsonObject config = (JsonObject) ConfigVerticle.getInstance().getConfigValue("jdbc");
+		JsonObject config = (JsonObject) ConfigVerticle.getInstance().getConfigValue("pgjdbc");
 		if (config == null) 
 		{
-			throw new RuntimeException("Could not find config with key 'jdbc'");
+			throw new RuntimeException("Could not find config with key 'pgjdbc'");
 		}
-		this.client = JDBCClient.createShared(vertx, config);
+		this.client = PostgreSQLClient.createShared(vertx, config);
 		this.client.getConnection(handler -> {
 			if (handler.succeeded())
 			{
@@ -178,7 +179,7 @@ public class DatabaseVerticle extends AbstractVerticle
 			
 			if ( result.succeeded() )
 			{
-				Vertx.vertx().deployVerticle(DatabaseVerticle.class.getCanonicalName(), d -> {
+				Vertx.vertx().deployVerticle(PgDatabaseVerticle.class.getCanonicalName(), d -> {
 					
 					if ( d.succeeded())
 					{

@@ -31,7 +31,7 @@ public class MessageVerticle extends AbstractVerticle
 
     public static MessageVerticle getInstance()
     {
-    	return thisInstace;
+    		return thisInstace;
     }
     
     public String getMessage(Enum key)

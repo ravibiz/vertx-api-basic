@@ -4,7 +4,7 @@
     "sequential": 
     [
       {
-        "name": "com.vk.vertxapi.db.DatabaseVerticle",
+        "name": "com.vk.vertxapi.db.PgDatabaseVerticle",
         "instances": 10
       },
       {

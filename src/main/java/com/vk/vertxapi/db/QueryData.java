@@ -45,13 +45,13 @@ public class QueryData
 
 	public JsonArray getParams()
 	{
-		if (this.paramsObject == null || this.queryDef == null || this.queryDef.paramList == null) return null;
+		if (this.paramsObject == null || this.queryDef == null) return null;
 		return buildParams(this.paramsObject, this.queryDef.paramList);
 	}
 
 	public List<JsonArray> getBatchParams()
 	{
-		if (this.paramsObjectList == null || this.queryDef == null || this.queryDef.paramList == null) return null;
+		if (this.paramsObjectList == null || this.queryDef == null) return null;
 		
 		List<JsonArray> batchParamsL = new ArrayList<>();
 		for (JsonObject paramsObj : this.paramsObjectList)

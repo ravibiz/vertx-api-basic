@@ -16,6 +16,16 @@
 			"file": "test.json",
 			"encoding" : "application/json",
 			"default": "{\"values\":[]}"
+		},
+		
+		{
+			"uri": "/testdb",
+			"source": "db",
+			"query": "select.test1",
+			"params": [],
+			"resultfields": [],
+			"default": "{\"values\":[]}",
+			"resultkey": "test1"
 		}
 	]
 }

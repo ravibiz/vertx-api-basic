@@ -5,11 +5,24 @@
     "driver_class": "com.mysql.jdbc.Driver",
     "url": "jdbc:mysql://localhost/appdb?autoReconnect=true&useSSL=false",
     "max_pool_size": 20,
-    "user": "root",
-    "password": "root",
+    "user": "ola",
+    "password": "ola",
     "max_idle_time" :  28799
   },
 
+   "pgjdbc": {
+    "driver_class": "org.postgresql.Driver",
+    "username": "ola",
+    "password": "ola",
+    "localhost" : "127.0.0.1",
+    "port" : 5432,
+    "database" : "appdb",
+    "maxPoolSize": 20,
+    "charset" : "UTF-8",
+    "queryTimeout" : 10000
+  },
+
+ 
   "resetpassword":{
   	 "expInMin" : 30,
   	 "resetBaseUrl" : "http://localhost:3000/#/resetpassword?token="
@@ -22,6 +35,8 @@
   "ssl_keystore": "ssl/apiserver.jks",
   "ssl_password": "Apiserver123#",
 
+  "api_port" : 1442,
+  
   "secure_api" : false,
   
   "allowcrossorigin" : true,

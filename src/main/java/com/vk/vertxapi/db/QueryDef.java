@@ -26,7 +26,7 @@ public class QueryDef
 		this(queryJson.getString("query"), queryJson.getString("type"), queryJson.getString("table"), queryJson.getBoolean("batch"), queryJson.getJsonArray("roles"));
 		this.queryId = queryJson.getString("id");
 		JsonArray paramsArray = queryJson.getJsonArray("params");
-		if (paramsArray != null && !paramsArray.isEmpty()) 
+		if (paramsArray != null ) // && !paramsArray.isEmpty()
 		{
 			this.paramList = new String[paramsArray.size()];
 			for (int i=0; i<paramsArray.size(); i++)

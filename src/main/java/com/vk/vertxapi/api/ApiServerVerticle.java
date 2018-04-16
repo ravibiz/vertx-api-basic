@@ -27,7 +27,7 @@ public class ApiServerVerticle extends AbstractVerticle
     @Override
     public void start(Future<Void> startFuture) throws Exception 
     {
-    	LOG.info("Starting api server ...");
+    		LOG.info("Starting api server ...");
         Router router = Router.router(vertx);
 
         boolean allowCrossOrigin = ConfigVerticle.getInstance().getBoolean("allowcrossorigin", false);
@@ -50,7 +50,7 @@ public class ApiServerVerticle extends AbstractVerticle
         boolean useSSL = ConfigVerticle.getInstance().getBoolean("usessl", false);
         if ( useSSL )
         {
-        	LOG.info("HTTPS enbaled webserver");
+        		LOG.info("HTTPS enbaled webserver");
             String ssl_keystore = ConfigVerticle.getInstance().getStringValue("ssl_keystore", "ssl/apiserver.jks");
             String ssl_password = ConfigVerticle.getInstance().getStringValue("ssl_password", "Apiserver123#");
             HttpServerOptions options = new HttpServerOptions()
@@ -76,7 +76,7 @@ public class ApiServerVerticle extends AbstractVerticle
 
     private void setupPingHandler(Router router) 
     {
-    	router.mountSubRouter("/ping", new PingHandler(vertx));
+    		router.mountSubRouter("/ping", new PingHandler(vertx));
     }
 
     private void setupApiHandler(Router router) 

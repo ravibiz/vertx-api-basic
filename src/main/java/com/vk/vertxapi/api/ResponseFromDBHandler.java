@@ -80,21 +80,21 @@ public class ResponseFromDBHandler extends AbstractRouteHandler
         QueryData queryData = new QueryData(this.query, paramsData);
     	
         if ( secureApi )
-    	{
-        	JsonObject payloadJson = this.getPayloadJson(context);
-            String role = null;
-            if ( null != payloadJson )
-            {
-            	role = payloadJson.getString("role");
-                overrideSecureParams(payloadJson, paramsData);
-            }
-            
-            if ( ! queryData.isAuthorized(role) )
-            {
-            	context.fail(401);
-            	return;
-            }
-    	}
+	    	{
+        			JsonObject payloadJson = this.getPayloadJson(context);
+	            String role = null;
+	            if ( null != payloadJson )
+	            {
+	            		role = payloadJson.getString("role");
+	                overrideSecureParams(payloadJson, paramsData);
+	            }
+	            
+	            if ( ! queryData.isAuthorized(role) )
+	            {
+	            		context.fail(401);
+	            		return;
+	            }
+	    	}
         
         Integer id = LocalCache.getInstance().store(queryData);
         

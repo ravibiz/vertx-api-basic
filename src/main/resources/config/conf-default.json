@@ -1,0 +1,13 @@
+{
+  "version": "0.0.0a",
+
+   "jdbc": {
+    "driver_class": "org.postgresql.Driver",
+    "url": "jdbc:postgresql://localhost:5432/appdb",
+    "max_pool_size": 20,
+    "user": "ola",
+    "password": "ola",
+    "max_idle_time" :  28799
+  }
+
+}

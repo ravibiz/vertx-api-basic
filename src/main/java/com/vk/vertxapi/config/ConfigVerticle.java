@@ -25,9 +25,10 @@ public class ConfigVerticle extends AbstractVerticle
 
 	private static ConfigVerticle INSTANCE;
 
-	private String baseConfigFile = "config/conf.json";
-	private String esConfig = "config/es.json";
-	private String servicesConfig = "config/services.json";
+	private String baseConfigFile = "config/conf-default.json";
+	private String esConfig = "config/es-default.json";
+	private String servicesConfig = "config/services-default.json";
+	private String restUrlConfig = "config/resturl-default.json";
 
 	private List<String> configFilesToLoad;
 
@@ -88,6 +89,7 @@ public class ConfigVerticle extends AbstractVerticle
 		}
 		allConfigFiles.push(this.esConfig);
 		allConfigFiles.push(this.servicesConfig);
+		allConfigFiles.push(this.restUrlConfig);
 		allConfigFiles.push(this.baseConfigFile);
 
 		this.serverConfig = new JsonObject();
